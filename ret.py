@@ -3,6 +3,30 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
+blue_line = ("""
+        <style>
+            @keyframes fadeInOut {
+                0% {
+                    opacity: 0;
+                }
+                50% {
+                    opacity: 1;
+                }
+                100% {
+                    opacity: 0;
+                }
+            }
+            
+            hr.customHR {
+                border: none;
+                border-top: 2px solid #335575;
+                box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+                animation: fadeInOut 5s ease-in-out infinite;
+            }
+        </style>
+        <hr class="customHR">
+    """)
+
 # Streamlit App
 st.markdown("""
     <style>
@@ -32,6 +56,11 @@ st.sidebar.markdown(
     """, 
     unsafe_allow_html=True
 )
+
+st.sidebar.markdown(blue_line, unsafe_allow_html=True)
+
+
+
 
 age_limit = 85 + 1
 years_to_retirement = retirement_age - age
@@ -135,29 +164,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-blue_line = ("""
-        <style>
-            @keyframes fadeInOut {
-                0% {
-                    opacity: 0;
-                }
-                50% {
-                    opacity: 1;
-                }
-                100% {
-                    opacity: 0;
-                }
-            }
-            
-            hr.customHR {
-                border: none;
-                border-top: 2px solid #335575;
-                box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-                animation: fadeInOut 5s ease-in-out infinite;
-            }
-        </style>
-        <hr class="customHR">
-    """)
+
 st.markdown(blue_line, unsafe_allow_html=True)
 
 Tamra = Tamra[ Tamra['العمر']>= retirement_age]
